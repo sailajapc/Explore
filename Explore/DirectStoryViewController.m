@@ -60,8 +60,7 @@
 {
     if (buttonIndex == 0) 
     {
-        [self.navigationController popViewControllerAnimated:YES];
-        [overLayView removeFromSuperview];
+        exit(0);
     }
     else
     {

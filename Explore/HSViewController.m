@@ -14,7 +14,7 @@
 @end
 
 @implementation HSViewController
-@synthesize storyImage,storyLabelIn;
+@synthesize storyImage,storyLabelIn,storyLabelOut;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) 
@@ -67,17 +67,19 @@
         tapCount++;
         if (tapCount == [imageArray count]) 
         {
-            tapCount = 0;
+            [self performSelector:@selector(skipButtonClicked)];
         }
     }
+    if (tapCount == 0) {
     [self.storyImage setFrame:CGRectMake( -130.0f, 44.0f, 320.0f, 200.0f)]; //notice this is OFF screen!
     [UIView beginAnimations:@"animateStoryImage" context:nil];
     [UIView setAnimationDuration:2];
     [self.storyImage setFrame:CGRectMake( 0.0f, 44.0f, 320.0f, 200.0f)]; //notice this is ON screen!
     [UIView commitAnimations];
+    }
     
     [self.storyLabelIn setFrame:CGRectMake( -130.0f, 272.0f, 268.0f,110.0f)]; //notice this is OFF screen!
-    [UIView beginAnimations:@"animateStoryLabelIN" context:nil];
+    [UIView beginAnimations:@"animateStoryLabelIn" context:nil];
     [UIView setAnimationDuration:2];
     [self.storyLabelIn setFrame:CGRectMake( 26.0f, 272.0f, 268.0f, 110.0f)]; //notice this is ON screen!
     [UIView commitAnimations]; 
@@ -86,16 +88,11 @@
 
 - (void)easeOut
 {
-    [self.storyImage setFrame:CGRectMake( 0.0f, 44.0f, 320.0f, 200.0f)]; //notice this is OFF screen!
-    [UIView beginAnimations:@"animateStoryImage" context:nil];
-    [UIView setAnimationDuration:2];
-    [self.storyImage setFrame:CGRectMake( 350.0f, 44.0f, 320.0f, 200.0f)]; //notice this is ON screen!
-    [UIView commitAnimations];
+    self.storyLabelOut = self.storyLabelIn;
     
-    [self.storyLabelIn setFrame:CGRectMake( 26.0f, 272.0f, 268.0f,110.0f)]; //notice this is OFF screen!
-    [UIView beginAnimations:@"animateStoryLabelIN" context:nil];
+    [UIView beginAnimations:@"animateStoryLabelOut" context:nil];
     [UIView setAnimationDuration:2];
-    [self.storyLabelIn setFrame:CGRectMake( 376.0f, 272.0f, 268.0f, 110.0f)]; //notice this is ON screen!
+    [self.storyLabelOut setFrame:CGRectMake( 376.0f, 272.0f, 268.0f, 110.0f)]; //notice this is ON screen!
     [UIView commitAnimations]; 
     
  }
@@ -117,13 +114,7 @@
 - (void)ContinueStory
 {
     [self easeOut];
-    
-    [NSTimer scheduledTimerWithTimeInterval:1.0
-                                         target:self
-                                       selector:@selector(easeIn)
-                                       userInfo:nil
-                                        repeats:NO];
-
+    [self performSelector:@selector(easeIn) withObject:nil afterDelay:1.0];
     NSLog(@"playButtonClicked");
 }
 - (void)skipButtonClicked

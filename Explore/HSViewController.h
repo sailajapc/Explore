@@ -13,7 +13,7 @@
 {
     UIImageView *storyImage;
     UIImageView *storyLabelIn;
-//    UIImageView *storyLabelOut;
+    UIImageView *storyLabelOut;
     UILabel *description;
 
     NSMutableArray *imageArray;
@@ -23,6 +23,6 @@
 }
 @property(nonatomic,retain)IBOutlet UIImageView *storyImage;
 @property(nonatomic,retain)IBOutlet UIImageView *storyLabelIn;
-//@property(nonatomic,retain)IBOutlet UIImageView *storyLabelOut;
+@property(nonatomic,retain)IBOutlet UIImageView *storyLabelOut;
 
 @end
