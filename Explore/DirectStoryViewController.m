@@ -89,14 +89,14 @@
     if ([array containsObject:selImage.image])
     {
         NSLog(@"touch recognized");
-        CGPoint location = CGPointMake(05, 170);
+        CGPoint location = CGPointMake(selImage.frame.origin.x, selImage.frame.origin.y);
         
         [UIImageView beginAnimations:nil context:nil];
         [UIImageView setAnimationDelegate:self];
         [UIImageView setAnimationDuration:1.5f];
         [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
         
-        CGAffineTransform scaleTrans = CGAffineTransformMakeScale(0, 0);
+        CGAffineTransform scaleTrans = CGAffineTransformMakeScale(30,30);
 //        CGAffineTransform rotateTrans = CGAffineTransformMakeRotation(1 * M_PI / 180);
         
        selImage.transform = CGAffineTransformInvert(scaleTrans);
