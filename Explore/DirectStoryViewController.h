@@ -13,6 +13,12 @@
     UIView *overLayView;
     NSArray *array;
     UILabel *timeDisplayLabel;
+    UILabel *scorelabel;
+    
+    int time;
+    int score;
+    NSTimer *timer;
+
 }
 
 @end
