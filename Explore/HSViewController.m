@@ -20,7 +20,8 @@
     if (self) 
     {
         self.title = @"Hide & Seek";
-              
+        
+        //Create Buttons
         UIButton *skipButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
        [skipButton setFrame:CGRectMake(170, 390, 80, 35)];
         [skipButton setTitle:@"Skip" forState:UIControlStateNormal];
@@ -34,6 +35,7 @@
         [self.view addSubview:playButton];
         
         
+        //Add data to story & label frames
         imageview = [[UIImageView alloc]initWithFrame:CGRectMake(16,16,288, 167)];
         [imageview setImage:[UIImage imageNamed:@"Sairam.jpg"]];
         [self.storyImage addSubview:imageview];
@@ -46,10 +48,7 @@
         description.numberOfLines = 5;
         [self.storyLabelIn addSubview:description];
         
-//        [self.storyLabelOut addSubview:description];
-
-       [description release];
-        
+        //Store the data of story & labels
         imageArray = [[NSMutableArray alloc]initWithObjects:@"Vishnu.jpg",@"amma.jpg",@"god.jpg",nil];
     
         labelArray = [[NSMutableArray alloc]initWithObjects:@"Vishnu Story",@"Durgamma Story",@"SitaRam Story", nil];
@@ -59,9 +58,16 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark Animation methods
+
+/**
+ * Animation to present story & label frames
+ */
 - (void)easeIn
 {
-    if (tapCount < [imageArray count]) {
+    if (tapCount < [imageArray count])
+    {
         [imageview setImage:[UIImage imageNamed:[imageArray objectAtIndex:tapCount]]];
         description .text = [labelArray objectAtIndex:tapCount];
         tapCount++;
@@ -70,6 +76,7 @@
             [self performSelector:@selector(skipButtonClicked)];
         }
     }
+    
     if (tapCount == 0) {
     [self.storyImage setFrame:CGRectMake( -130.0f, 44.0f, 320.0f, 200.0f)]; //notice this is OFF screen!
     [UIView beginAnimations:@"animateStoryImage" context:nil];
@@ -86,6 +93,9 @@
     
    }
 
+/**
+ * Animation to remove story & label frames
+ */
 - (void)easeOut
 {
     self.storyLabelOut = self.storyLabelIn;
@@ -97,6 +107,7 @@
     
  }
 
+#pragma mark - View lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -111,22 +122,6 @@
     // Release any retained subviews of the main view.
 }
 
-- (void)ContinueStory
-{
-    [self easeOut];
-    [self performSelector:@selector(easeIn) withObject:nil afterDelay:1.0];
-    NSLog(@"playButtonClicked");
-}
-- (void)skipButtonClicked
-{
-    NSLog(@"skipButtonClicked");
-    
-    DirectStoryViewController *directViewObject = [[DirectStoryViewController alloc]init];
-    [self.navigationController pushViewController:directViewObject animated:NO];
-    [directViewObject release];
-
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
     self.title = @"";
@@ -135,6 +130,22 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark -
+#pragma mark Button Action methods
+
+- (void)ContinueStory
+{
+    [self easeOut];
+    [self performSelector:@selector(easeIn) withObject:nil afterDelay:1.0];
+}
+
+- (void)skipButtonClicked
+{
+    DirectStoryViewController *directViewObject = [[DirectStoryViewController alloc]init];
+    [self.navigationController pushViewController:directViewObject animated:NO];
+    [directViewObject release];
 }
 
 @end
