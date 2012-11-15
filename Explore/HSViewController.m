@@ -58,6 +58,18 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [imageArray release];
+    [labelArray release];
+    [description release];
+    [imageview release];
+    [storyImage release];
+    [storyLabelIn release];
+    [storyLabelOut release];
+    [super dealloc];
+}
+
 #pragma mark -
 #pragma mark Animation methods
 

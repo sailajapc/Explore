@@ -30,6 +30,7 @@
     navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     //    self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    [navigationController release];
     return YES;
 }
 

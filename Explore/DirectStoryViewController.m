@@ -16,9 +16,45 @@
     if (self) 
     {
         UIImageView *backGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"dining.jpeg"]];
-        [backGround setFrame:self.view.frame];
+        [backGround setFrame:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y - 60, self.view.frame.size.width,self.view.frame.size.height -60)];
         [backGround setUserInteractionEnabled:YES];
         [self.view addSubview:backGround];
+        [backGround release];
+        
+        UIImageView *namesBackGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"namesLabel.jpg"]];
+        [namesBackGround setFrame:CGRectMake(0,362,self.view.frame.size.width - 60,100)];
+        [namesBackGround setUserInteractionEnabled:YES];
+        [self.view addSubview:namesBackGround];
+        [namesBackGround release];
+        
+        labelNamesarray = [[NSArray alloc]initWithObjects:@"flower",@"ball",@"bell",@"flower11",@"ball11",@"bell11", nil];
+        
+        int i=0,k=0; 
+		
+		while(i<6)
+        {
+			int y = k*32;
+			int j=0;
+            //Display num of images for each row
+			for(j=0; j<2;j++){
+				if (i>=6) break;
+				UILabel *label = [[[UILabel alloc] init] autorelease];
+                label.text=[labelNamesarray objectAtIndex:i];
+                label.textColor = [UIColor blackColor];
+				label.backgroundColor = [UIColor clearColor];
+				label.textAlignment = UITextAlignmentCenter;
+                [label setFrame:CGRectMake((40*(j+1)+90*j), y-10, 60, 50)];
+                [namesBackGround addSubview:label];
+                i++;
+			}
+			k = k+1;
+		}
+
+        UIButton *helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        [helpButton setBackgroundImage:[UIImage imageNamed:@"helppress.jpeg"] forState:UIControlStateNormal];
+        [helpButton setFrame:CGRectMake(262,362,55,97)];
+        [helpButton addTarget:self action:@selector(helpButtonPressed) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:helpButton];
         
         self.title = @"Hide & Seek";
         
@@ -75,8 +111,24 @@
         
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc]initWithCustomView:leftView];
         self.navigationItem.leftBarButtonItem = leftItem;
+        
+        [rightView release];
+        [rightItem release];
+        [leftView release];
+        [leftItem release];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [overLayView release];
+    [scorelabel release];
+    [timeDisplayLabel release];
+    [array release];
+    [timer release];
+    timer = nil;
+    [super dealloc]; 
 }
 
 #pragma mark - View lifecycle
@@ -131,7 +183,7 @@
  * Display the time 
  */
 
--(void) caliculateTime
+- (void) caliculateTime
 {
     time = time - 1;
     timeDisplayLabel .text = [NSString stringWithFormat:@"%@%d",KTIME,time];
@@ -153,7 +205,12 @@
      }
 }
 
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)helpButtonPressed
+{
+    NSLog(@"Help Button Pressed");
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     UIImageView *selImage = (UIImageView *)[touch view];

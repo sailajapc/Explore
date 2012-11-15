@@ -12,8 +12,11 @@
 {
     UIView *overLayView;
     NSArray *array;
+    NSArray *labelNamesarray;
     UILabel *timeDisplayLabel;
     UILabel *scorelabel;
+    
+    UILabel *namesLabel;
     
     int time;
     int score;
