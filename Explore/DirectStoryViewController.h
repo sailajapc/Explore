@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class CustomBadge;
 @interface DirectStoryViewController : UIViewController<UIAlertViewDelegate>
 {
     UIView *overLayView;
@@ -21,7 +21,7 @@
     int time;
     int score;
     NSTimer *timer;
-
+   CustomBadge *helpBadge;
 }
 
 @end

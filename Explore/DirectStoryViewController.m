@@ -7,6 +7,7 @@
 //
 
 #import "DirectStoryViewController.h"
+#import "CustomBadge.h"
 #define KTIME @"Time : "
 #define KSCORE @"Score : "
 @implementation DirectStoryViewController
@@ -51,11 +52,20 @@
 		}
 
         UIButton *helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [helpButton setBackgroundImage:[UIImage imageNamed:@"helppress.jpeg"] forState:UIControlStateNormal];
+        [helpButton setBackgroundImage:[UIImage imageNamed:@"help.jpeg"] forState:UIControlStateNormal];
         [helpButton setFrame:CGRectMake(262,362,55,97)];
         [helpButton addTarget:self action:@selector(helpButtonPressed) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:helpButton];
         
+        helpBadge = [[CustomBadge customBadgeWithString:@"1"
+                                        withStringColor:[UIColor whiteColor]
+                                         withInsetColor:[UIColor redColor]
+                                         withBadgeFrame:YES
+                                    withBadgeFrameColor:[UIColor whiteColor]
+                                              withScale:0.8
+                                            withShining:YES] retain];
+        [helpBadge setFrame:CGRectMake(27, 20, 20, 20)];
+        [helpButton addSubview:helpBadge];
         self.title = @"Hide & Seek";
         
         //Create a transparent screen
