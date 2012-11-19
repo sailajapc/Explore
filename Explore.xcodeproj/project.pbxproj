@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A037438165A023000CE2526 /* candle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A037437165A023000CE2526 /* candle.jpeg */; };
+		8A03743B165A023600CE2526 /* bottle.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A03743A165A023600CE2526 /* bottle.jpeg */; };
+		8A037444165A038700CE2526 /* pad.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A03743C165A038700CE2526 /* pad.jpeg */; };
+		8A037445165A038700CE2526 /* hat.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A03743D165A038700CE2526 /* hat.jpeg */; };
+		8A037446165A038700CE2526 /* pencil.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A03743E165A038700CE2526 /* pencil.jpeg */; };
+		8A037447165A038700CE2526 /* pen.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A03743F165A038700CE2526 /* pen.jpeg */; };
+		8A037448165A038700CE2526 /* newspaperi.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A037440165A038700CE2526 /* newspaperi.jpeg */; };
+		8A037449165A038700CE2526 /* cal.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A037441165A038700CE2526 /* cal.jpeg */; };
+		8A03744A165A038700CE2526 /* bag.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A037442165A038700CE2526 /* bag.jpeg */; };
+		8A03744B165A038700CE2526 /* mbile.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A037443165A038700CE2526 /* mbile.jpeg */; };
 		8A2E58B21650F1F80066BB75 /* namesLabel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A2E58B11650F1F80066BB75 /* namesLabel.jpg */; };
 		8A83371F164AA3D500824C40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A83371E164AA3D500824C40 /* UIKit.framework */; };
 		8A833721164AA3D500824C40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A833720164AA3D500824C40 /* Foundation.framework */; };
@@ -31,6 +41,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A037437165A023000CE2526 /* candle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = candle.jpeg; sourceTree = "<group>"; };
+		8A03743A165A023600CE2526 /* bottle.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bottle.jpeg; sourceTree = "<group>"; };
+		8A03743C165A038700CE2526 /* pad.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pad.jpeg; sourceTree = "<group>"; };
+		8A03743D165A038700CE2526 /* hat.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hat.jpeg; sourceTree = "<group>"; };
+		8A03743E165A038700CE2526 /* pencil.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pencil.jpeg; sourceTree = "<group>"; };
+		8A03743F165A038700CE2526 /* pen.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pen.jpeg; sourceTree = "<group>"; };
+		8A037440165A038700CE2526 /* newspaperi.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newspaperi.jpeg; sourceTree = "<group>"; };
+		8A037441165A038700CE2526 /* cal.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cal.jpeg; sourceTree = "<group>"; };
+		8A037442165A038700CE2526 /* bag.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bag.jpeg; sourceTree = "<group>"; };
+		8A037443165A038700CE2526 /* mbile.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mbile.jpeg; sourceTree = "<group>"; };
 		8A2E58B11650F1F80066BB75 /* namesLabel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = namesLabel.jpg; sourceTree = "<group>"; };
 		8A83371A164AA3D500824C40 /* Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Explore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A83371E164AA3D500824C40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -108,8 +128,8 @@
 			children = (
 				8A83372D164AA3D500824C40 /* HSAppDelegate.h */,
 				8A83372E164AA3D500824C40 /* HSAppDelegate.m */,
-				9A3A51B116562A1800EDA600 /* Resources  */,
 				9A3A51AE1656286200EDA600 /* ViewControllers */,
+				9A3A51B116562A1800EDA600 /* Resources  */,
 				8A833725164AA3D500824C40 /* Supporting Files */,
 			);
 			path = Explore;
@@ -150,6 +170,16 @@
 		9A3A51B116562A1800EDA600 /* Resources  */ = {
 			isa = PBXGroup;
 			children = (
+				8A03743C165A038700CE2526 /* pad.jpeg */,
+				8A03743D165A038700CE2526 /* hat.jpeg */,
+				8A03743E165A038700CE2526 /* pencil.jpeg */,
+				8A03743F165A038700CE2526 /* pen.jpeg */,
+				8A037440165A038700CE2526 /* newspaperi.jpeg */,
+				8A037441165A038700CE2526 /* cal.jpeg */,
+				8A037442165A038700CE2526 /* bag.jpeg */,
+				8A037443165A038700CE2526 /* mbile.jpeg */,
+				8A03743A165A023600CE2526 /* bottle.jpeg */,
+				8A037437165A023000CE2526 /* candle.jpeg */,
 				9A3A51A416561A1000EDA600 /* help.jpeg */,
 				8A2E58B11650F1F80066BB75 /* namesLabel.jpg */,
 				8A83373D164AA40700824C40 /* dining.jpeg */,
@@ -229,6 +259,16 @@
 				8A2E58B21650F1F80066BB75 /* namesLabel.jpg in Resources */,
 				9A3A51A516561A1000EDA600 /* help.jpeg in Resources */,
 				9A3A51B01656290B00EDA600 /* HSViewController.xib in Resources */,
+				8A037438165A023000CE2526 /* candle.jpeg in Resources */,
+				8A03743B165A023600CE2526 /* bottle.jpeg in Resources */,
+				8A037444165A038700CE2526 /* pad.jpeg in Resources */,
+				8A037445165A038700CE2526 /* hat.jpeg in Resources */,
+				8A037446165A038700CE2526 /* pencil.jpeg in Resources */,
+				8A037447165A038700CE2526 /* pen.jpeg in Resources */,
+				8A037448165A038700CE2526 /* newspaperi.jpeg in Resources */,
+				8A037449165A038700CE2526 /* cal.jpeg in Resources */,
+				8A03744A165A038700CE2526 /* bag.jpeg in Resources */,
+				8A03744B165A038700CE2526 /* mbile.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +350,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Explore/Explore-Prefix.pch";
 				INFOPLIST_FILE = "Explore/Explore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -321,6 +362,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Explore/Explore-Prefix.pch";
 				INFOPLIST_FILE = "Explore/Explore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

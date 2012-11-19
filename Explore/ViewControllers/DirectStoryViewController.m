@@ -12,40 +12,45 @@
 #define KSCORE @"Score : "
 @implementation DirectStoryViewController
 
-- (id)init {
+- (id)init 
+{
     self = [super init];
     if (self) 
     {
         UIImageView *backGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"dining.jpeg"]];
         [backGround setFrame:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y - 60, self.view.frame.size.width,self.view.frame.size.height -60)];
+        backGround.tag=98765;
         [backGround setUserInteractionEnabled:YES];
         [self.view addSubview:backGround];
         [backGround release];
         
-        UIImageView *namesBackGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"namesLabel.jpg"]];
+        namesBackGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"namesLabel.jpg"]];
         [namesBackGround setFrame:CGRectMake(0,362,self.view.frame.size.width - 60,100)];
         [namesBackGround setUserInteractionEnabled:YES];
         [self.view addSubview:namesBackGround];
         [namesBackGround release];
         
-        labelNamesarray = [[NSArray alloc]initWithObjects:@"flower",@"ball",@"bell",@"flower11",@"ball11",@"bell11", nil];
+        labelNamesarray = [[NSArray alloc]initWithObjects:@"flower",@"ball",@"bell11", nil];
         
         int i=0,k=0; 
-		
-		while(i<6)
+		while(i<[labelNamesarray count])
         {
 			int y = k*32;
 			int j=0;
+            
             //Display num of images for each row
 			for(j=0; j<2;j++){
-				if (i>=6) break;
-				UILabel *label = [[[UILabel alloc] init] autorelease];
-                label.text=[labelNamesarray objectAtIndex:i];
-                label.textColor = [UIColor blackColor];
-				label.backgroundColor = [UIColor clearColor];
-				label.textAlignment = UITextAlignmentCenter;
-                [label setFrame:CGRectMake((40*(j+1)+90*j), y-10, 60, 50)];
-                [namesBackGround addSubview:label];
+				if (i>=[labelNamesarray count]) break;
+				labelText = [[[UILabel alloc] init] autorelease];
+                labelText.text=[labelNamesarray objectAtIndex:i];
+                NSLog(@"label text is:%@",[labelNamesarray objectAtIndex:i]);
+                labelText.textColor = [UIColor blackColor];
+				labelText.backgroundColor = [UIColor clearColor];
+				labelText.textAlignment = UITextAlignmentLeft; 
+                labelText.tag = 100 + i;
+                NSLog(@"tag value is :%d",labelText.tag);
+                [labelText setFrame:CGRectMake((40*(j+1)+90*j), y-10, 60, 50)];
+                [namesBackGround addSubview:labelText];
                 i++;
 			}
 			k = k+1;
@@ -93,6 +98,31 @@
             [self.view addSubview:hiddenImage];
             [hiddenImage release];
         }
+        NSArray * dummyImagesArray = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"bottle.jpeg"],[UIImage imageNamed:@"candle.jpeg"],[UIImage imageNamed:@"pad.jpeg"],[UIImage imageNamed:@"hat.jpeg"],[UIImage imageNamed:@"pencil.jpeg"],[UIImage imageNamed:@"pen.jpeg"],[UIImage imageNamed:@"newspaperi.jpeg"],[UIImage imageNamed:@"cal.jpeg"],[UIImage imageNamed:@"bag.jpeg"],[UIImage imageNamed:@"mbile.jpeg"], nil];
+        
+        int rowCount = 0;
+        int x = 100;
+    
+        NSLog(@"dummy array count is before : %d ",[dummyImagesArray count]);
+
+        for (int i = 0; i<[dummyImagesArray count]; i++)
+        {
+            UIImageView * hiddenImage = [[UIImageView alloc]init];
+            [hiddenImage setFrame:CGRectMake(x, 50*(rowCount+1), 30, 30)];
+            [hiddenImage setImage:[dummyImagesArray objectAtIndex:i]];
+            [hiddenImage setTag:i + 1000];
+            [hiddenImage setUserInteractionEnabled:YES];
+            [self.view addSubview:hiddenImage];
+            [hiddenImage release];
+            rowCount ++;
+            
+            if (rowCount == 4)
+            {
+                rowCount = 0;
+                x = x + 100;
+            }
+        }
+
         time = 20;
         score = 0;
         
@@ -175,7 +205,8 @@
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    switch (buttonIndex) {
+    switch (buttonIndex) 
+    {
         case 0:
             exit(0);
             
@@ -208,7 +239,6 @@
     else if(time == 5)
     {
         timeDisplayLabel.textColor = [UIColor redColor];
-
         UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"***Alert***" message:@"Your time is elapsing" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertview show];
         [alertview release];
@@ -229,7 +259,6 @@
     {
         score = score + 10;
         scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,score];
-        
         CGPoint location = CGPointMake(selImage.frame.origin.x, selImage.frame.origin.y);
         
         //Animate the image when user taps the hidden image
@@ -244,6 +273,15 @@
         selImage.center = location;
         [UIImageView commitAnimations];
         
+        //Color changes when a image is selected.
+        for(UILabel *label in [namesBackGround subviews])
+        {
+            int tagvalue=[label tag];
+            if((tagvalue-100)==[[touch view]tag])
+            {
+                label.textColor=[UIColor grayColor];
+            }
+        }
         //Display alert if user founds all hidden images
         if (score == [array count] *10)
         {

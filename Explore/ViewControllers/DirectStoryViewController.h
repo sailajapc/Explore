@@ -15,13 +15,16 @@
     NSArray *labelNamesarray;
     UILabel *timeDisplayLabel;
     UILabel *scorelabel;
+    UIImageView *namesBackGround;
     
     UILabel *namesLabel;
+    UILabel *labelText;
     
     int time;
     int score;
+    
     NSTimer *timer;
-   CustomBadge *helpBadge;
+    CustomBadge *helpBadge;
 }
 
 @end
