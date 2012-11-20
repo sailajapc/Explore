@@ -22,7 +22,7 @@
     
     int time;
     int score;
-    
+    int playCount;
     NSTimer *timer;
     CustomBadge *helpBadge;
 }
