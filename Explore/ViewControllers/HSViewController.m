@@ -51,7 +51,7 @@
         //Store the data of story & labels
         imageArray = [[NSMutableArray alloc]initWithObjects:@"Vishnu.jpg",@"amma.jpg",@"god.jpg",nil];
     
-        labelArray = [[NSMutableArray alloc]initWithObjects:@"Vishnu Story",@"Durgamma Story",@"SitaRam Story", nil];
+        labelArray = [[NSMutableArray alloc]initWithObjects:@"Need to add the story description related to the story image",@"Implement story description related to the story image...",@"Add the  description related to the  above story image in further!!!!", nil];
         
         
     }
