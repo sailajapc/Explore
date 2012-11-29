@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Screen 1</key>
+	<array>
+		<dict>
+			<key>Name </key>
+			<string>Pencil</string>
+			<key>Image</key>
+			<string>pencil.jpeg</string>
+			<key>Postion</key>
+			<string>{20,100}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Hat</string>
+			<key>Image</key>
+			<string>hat.jpeg</string>
+			<key>Postion</key>
+			<string>{120,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pad</string>
+			<key>Image</key>
+			<string>pad.jpeg</string>
+			<key>Postion</key>
+			<string>{20,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>News Paper</string>
+			<key>Image</key>
+			<string>newspaper.jpeg</string>
+			<key>Postion</key>
+			<string>{100,68}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Calender</string>
+			<key>Image</key>
+			<string>cal.jpeg</string>
+			<key>Postion</key>
+			<string>{60,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bag</string>
+			<key>Image</key>
+			<string>bag.jpeg</string>
+			<key>Postion</key>
+			<string>{100,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Mobile</string>
+			<key>Image</key>
+			<string>mobile.jpeg</string>
+			<key>Postion</key>
+			<string>{130,300}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bottle</string>
+			<key>Image</key>
+			<string>bottle.jpeg</string>
+			<key>Postion</key>
+			<string>{160,180}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Candle</string>
+			<key>Image</key>
+			<string>candle.jpeg</string>
+			<key>Postion</key>
+			<string>{6,120}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Ball</string>
+			<key>Image</key>
+			<string>ball.jpeg</string>
+			<key>Postion</key>
+			<string>{122,240}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Flower</string>
+			<key>Image</key>
+			<string>flower.jpeg</string>
+			<key>Postion</key>
+			<string>{210,270}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Rose</string>
+			<key>Image</key>
+			<string>rose.jpeg</string>
+			<key>Postion</key>
+			<string>{170,250}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pen</string>
+			<key>Image</key>
+			<string>pen.jpeg</string>
+			<key>Postion</key>
+			<string>{17,75}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{250,300}</string>
+		</dict>
+	</array>
+	<key>Screen 2</key>
+	<array>
+		<dict>
+			<key>Name </key>
+			<string>Pencil</string>
+			<key>Image</key>
+			<string>pencil1.jpeg</string>
+			<key>Postion</key>
+			<string>{20,100}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Hat</string>
+			<key>Image</key>
+			<string>hat1.jpeg</string>
+			<key>Postion</key>
+			<string>{120,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pad</string>
+			<key>Image</key>
+			<string>pad1.jpeg</string>
+			<key>Postion</key>
+			<string>{20,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>News Paper</string>
+			<key>Image</key>
+			<string>newspaper1.jpeg</string>
+			<key>Postion</key>
+			<string>{100,68}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Calender</string>
+			<key>Image</key>
+			<string>cal1.jpeg</string>
+			<key>Postion</key>
+			<string>{60,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bag</string>
+			<key>Image</key>
+			<string>bag1.jpeg</string>
+			<key>Postion</key>
+			<string>{100,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Mobile</string>
+			<key>Image</key>
+			<string>mobile1.jpeg</string>
+			<key>Postion</key>
+			<string>{130,300}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bottle</string>
+			<key>Image</key>
+			<string>bottle1.jpeg</string>
+			<key>Postion</key>
+			<string>{160,180}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Candle</string>
+			<key>Image</key>
+			<string>candle1.jpeg</string>
+			<key>Postion</key>
+			<string>{6,120}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Ball</string>
+			<key>Image</key>
+			<string>ball1.jpeg</string>
+			<key>Postion</key>
+			<string>{122,240}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Flower</string>
+			<key>Image</key>
+			<string>flower1.jpeg</string>
+			<key>Postion</key>
+			<string>{210,270}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Rose</string>
+			<key>Image</key>
+			<string>rose1.jpeg</string>
+			<key>Postion</key>
+			<string>{170,250}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pen</string>
+			<key>Image</key>
+			<string>pen1.jpeg</string>
+			<key>Postion</key>
+			<string>{17,75}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{3,89}</string>
+		</dict>
+	</array>
+	<key>Screen 3</key>
+	<array>
+		<dict>
+			<key>Name </key>
+			<string>Pencil</string>
+			<key>Image</key>
+			<string>pencil2.jpeg</string>
+			<key>Postion</key>
+			<string>{20,100}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Hat</string>
+			<key>Image</key>
+			<string>hat2.jpeg</string>
+			<key>Postion</key>
+			<string>{120,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pad</string>
+			<key>Image</key>
+			<string>pad2.jpeg</string>
+			<key>Postion</key>
+			<string>{20,50}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>News Paper</string>
+			<key>Image</key>
+			<string>newspaper2.jpeg</string>
+			<key>Postion</key>
+			<string>{100,68}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Calender</string>
+			<key>Image</key>
+			<string>cal2.jpeg</string>
+			<key>Postion</key>
+			<string>{60,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bag</string>
+			<key>Image</key>
+			<string>bag2.jpeg</string>
+			<key>Postion</key>
+			<string>{100,210}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Mobile</string>
+			<key>Image</key>
+			<string>mobile2.jpeg</string>
+			<key>Postion</key>
+			<string>{130,300}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Bottle</string>
+			<key>Image</key>
+			<string>bottle2.jpeg</string>
+			<key>Postion</key>
+			<string>{160,180}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Candle</string>
+			<key>Image</key>
+			<string>candle2.jpeg</string>
+			<key>Postion</key>
+			<string>{6,120}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Ball</string>
+			<key>Image</key>
+			<string>ball2.jpeg</string>
+			<key>Postion</key>
+			<string>{122,240}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Flower</string>
+			<key>Image</key>
+			<string>flower2.jpeg</string>
+			<key>Postion</key>
+			<string>{210,270}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Rose</string>
+			<key>Image</key>
+			<string>rose2.jpeg</string>
+			<key>Postion</key>
+			<string>{170,250}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>Pen</string>
+			<key>Image</key>
+			<string>pen2.jpeg</string>
+			<key>Postion</key>
+			<string>{17,75}</string>
+		</dict>
+		<dict>
+			<key>Name </key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{130,66}</string>
+		</dict>
+	</array>
+</dict>
+</plist>

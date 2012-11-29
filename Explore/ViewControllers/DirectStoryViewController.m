@@ -12,6 +12,10 @@
 #define KSCORE @"Score : "
 #define DEFAULTTIME 20
 #define DEFAULTSCORE 0
+
+@interface DirectStoryViewController()
+- (void)resetUI;
+@end
 @implementation DirectStoryViewController
 
 - (id)init 
@@ -20,6 +24,7 @@
     if (self) 
     {
         playCount = 0;
+        helpCount = 1;
         UIImageView *backGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"dining.jpeg"]];
         [backGround setFrame:CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y - 60, self.view.frame.size.width,self.view.frame.size.height -60)];
         backGround.tag=98765;
@@ -105,7 +110,7 @@
         //Add score label on right side of navigation bar
         UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 80, 50)];
         
-        scorelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 5, 80, 35)];
+        scorelabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 5, 100, 35)];
         scorelabel.textAlignment = UITextAlignmentLeft;
         [scorelabel setBackgroundColor:[UIColor clearColor]];
         scorelabel.textColor = [UIColor whiteColor];
@@ -119,6 +124,8 @@
         [rightItem release];
         [leftView release];
         [leftItem release];
+        
+        imageArray = [[NSMutableArray alloc]init];
 
     }
     return self;
@@ -129,53 +136,43 @@
     [overLayView release];
     [scorelabel release];
     [timeDisplayLabel release];
-    [array release];
+    [imageArray release];
     [timer release];
     timer = nil;
     [super dealloc]; 
 }
 - (void)createUI
 {
+
     playCount = playCount +1;
     if (playCount>3) {
         [self.navigationController popToRootViewControllerAnimated:YES];
     }
-    array = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"flower.jpeg"],[UIImage imageNamed:@"ball.jpg"],[UIImage imageNamed:@"candle.jpeg"],[UIImage imageNamed:@"flower.jpg"],[UIImage imageNamed:@"pencil.jpeg"],[UIImage imageNamed:@"bag.jpeg"], nil];
-    
+    [imageArray removeAllObjects];
+    //Get data from plist
+    NSMutableDictionary *plist = [[NSMutableDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Images" ofType:@"plist"]];
+   NSMutableArray *locationArray = [[NSMutableArray alloc]init];
+   NSArray * dataArray = [plist objectForKey:[NSString stringWithFormat:@"Screen %d",playCount]];
+    for (int i = 0; i < [dataArray count]; i++) {
+        NSMutableDictionary * data = [dataArray objectAtIndex:i];
+        [imageArray addObject:[UIImage imageNamed:[data objectForKey:@"Image"]]];
+        [locationArray addObject:[data objectForKey:@"Postion"]];
+    }
+        
     //Add images on game screen
-    for (int i = 0; i<[array count]; i++)
+    for (int i = 0; i<[imageArray count]; i++)
     {
         UIImageView * hiddenImage = [[UIImageView alloc]init];
-        [hiddenImage setFrame:CGRectMake(50, 50*(i+1), 40, 40)];
-        [hiddenImage setImage:[array objectAtIndex:i]];
-        [hiddenImage setTag:i];
+        CGPoint position = CGPointFromString([locationArray objectAtIndex:i]);
+        [hiddenImage setFrame:CGRectMake(position.x, position.y, 50, 50)];
+        [hiddenImage setImage:[imageArray objectAtIndex:i]];
+        [hiddenImage setTag:i+100];
         [hiddenImage setUserInteractionEnabled:YES];
         [self.view addSubview:hiddenImage];
         hiddenImage.contentMode = UIViewContentModeScaleAspectFit;
         [hiddenImage release];
     }
-    NSArray * dummyImagesArray = [[NSArray alloc]initWithObjects:[UIImage imageNamed:@"bottle.jpeg"],[UIImage imageNamed:@"pad.jpeg"],[UIImage imageNamed:@"hat.jpeg"],[UIImage imageNamed:@"pen.jpeg"],[UIImage imageNamed:@"newspaperi.jpeg"],[UIImage imageNamed:@"cal.jpeg"],[UIImage imageNamed:@"mbile.jpeg"], nil];
-    
-    int rowCount = 0;
-    int x = 100;
-        
-    for (int i = 0; i<[dummyImagesArray count]; i++)
-    {
-        UIImageView * hiddenImage = [[UIImageView alloc]init];
-        [hiddenImage setFrame:CGRectMake(x, 50*(rowCount+1), 30, 30)];
-        [hiddenImage setImage:[dummyImagesArray objectAtIndex:i]];
-        [hiddenImage setTag:i + 1000];
-        [hiddenImage setUserInteractionEnabled:YES];
-        [self.view addSubview:hiddenImage];
-        [hiddenImage release];
-        rowCount ++;
-        
-        if (rowCount == 4)
-        {
-            rowCount = 0;
-            x = x + 100;
-        }
-    }
+    [locationArray release];
     [self resetUI];
 }
 
@@ -187,10 +184,17 @@
      label.textColor = [UIColor blackColor];
     }
     time = DEFAULTTIME;
-    score = DEFAULTSCORE;
     timeDisplayLabel.textColor = [UIColor whiteColor];
     timeDisplayLabel.text = [NSString stringWithFormat:@"%@%d",KTIME,DEFAULTTIME];
-    scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,DEFAULTSCORE];
+}
+- (void)removeAddedImages
+{
+    for(UIImageView *imageview in self.view.subviews)
+    {
+        if ([imageArray containsObject:imageview.image]) {
+            [imageview removeFromSuperview];
+        }
+    }
 }
 #pragma mark - View lifecycle
 
@@ -252,10 +256,12 @@
     if (time <= 0) 
     {
         [timer invalidate];
-        
+        [self removeAddedImages];
+
          UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Score" message:[NSString stringWithFormat:@"You got %d points \n Do you want to play again",score] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Quit",@"Play", nil];
         [alertview show];
         [alertview release];
+        
     }
     else if(time == 5)
     {
@@ -268,18 +274,41 @@
 
 - (void)helpButtonPressed
 {
-    NSLog(@"Help Button Pressed");
+    if (helpCount >0) {
+        helpCount = helpCount -1;
+        if (helpCount == 0) {
+            [helpBadge setHidden:YES];
+        }
+    [helpBadge autoBadgeSizeWithString:[NSString stringWithFormat:@"%d",helpCount]];
+    }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     UIImageView *selImage = (UIImageView *)[touch view];
-      
-    if ([array containsObject:selImage.image])
+    NSLog(@"image %@",selImage);
+    if ([imageArray containsObject:selImage.image])
     {
+        if (selImage.tag%100 == 13) {
+            helpCount = helpCount +1;
+            [helpBadge setHidden:NO];
+            [helpBadge autoBadgeSizeWithString:[NSString stringWithFormat:@"%d",helpCount]];
+        }
+        
+        else{
         score = score + 10;
         scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,score];
+            //Color changes when a image is selected.
+            for(UILabel *label in [namesBackGround subviews])
+            {
+                int tagvalue=[label tag];
+                if((tagvalue-100)==[[touch view]tag])
+                {
+                    label.textColor=[UIColor redColor];
+                }
+            }
+        }
         CGPoint location = CGPointMake(selImage.frame.origin.x, selImage.frame.origin.y);
         
         //Animate the image when user taps the hidden image
@@ -294,19 +323,11 @@
         selImage.center = location;
         [UIImageView commitAnimations];
                 
-        //Color changes when a image is selected.
-        for(UILabel *label in [namesBackGround subviews])
-        {
-            int tagvalue=[label tag];
-            if((tagvalue-100)==[[touch view]tag])
-            {
-                label.textColor=[UIColor redColor];
-            }
-        }
-        //Display alert if user founds all hidden images
-        if (score == [array count] *10)
+                //Display alert if user founds all hidden images
+        if (score == 60*playCount)
         {
             [timer invalidate];
+            [self removeAddedImages];
 
             UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Congratulations" message:[NSString stringWithFormat:@"You got %d points \n Do you want to play again",score] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Quit",@"Play", nil];
             [alertview show];
