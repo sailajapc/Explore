@@ -14,8 +14,14 @@
 #define DEFAULTSCORE 0
 
 @interface DirectStoryViewController()
+
+- (void)createUI;
 - (void)resetUI;
+- (void)removeAddedImages;
+- (void)createLabels;
+
 @end
+
 @implementation DirectStoryViewController
 
 - (id)init 
@@ -49,31 +55,7 @@
         [self.view addSubview:namesBackGround];
         [namesBackGround release];
         
-        labelNamesarray = [[NSArray alloc]initWithObjects:@"Flower",@"Ball",@"Candle",@"Rose",@"Pencil",@"Bag",nil];
-        
-        int i=0,k=0;
-        while(i<[labelNamesarray count])
-        {
-            int y = k*32;
-            int j=0;
-            
-            //Display num of images for each row
-            for(j=0; j<2;j++){
-                if (i>=[labelNamesarray count]) break;
-                labelText = [[[UILabel alloc] init] autorelease];
-                labelText.text=[labelNamesarray objectAtIndex:i];
-                NSLog(@"label text is:%@",[labelNamesarray objectAtIndex:i]);
-                labelText.textColor = [UIColor blackColor];
-                labelText.backgroundColor = [UIColor clearColor];
-                labelText.textAlignment = UITextAlignmentLeft;
-                labelText.tag = 100 + i;
-                NSLog(@"tag value is :%d",labelText.tag);
-                [labelText setFrame:CGRectMake((40*(j+1)+90*j), y-10, 60, 50)];
-                [namesBackGround addSubview:labelText];
-                i++;
-            }
-            k = k+1;
-        }
+        labelNamesarray = [[NSMutableArray alloc]init];
         
         UIButton *helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [helpButton setBackgroundImage:[UIImage imageNamed:@"help.jpeg"] forState:UIControlStateNormal];
@@ -141,61 +123,7 @@
     timer = nil;
     [super dealloc]; 
 }
-- (void)createUI
-{
 
-    playCount = playCount +1;
-    if (playCount>3) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
-    [imageArray removeAllObjects];
-    //Get data from plist
-    NSMutableDictionary *plist = [[NSMutableDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Images" ofType:@"plist"]];
-   NSMutableArray *locationArray = [[NSMutableArray alloc]init];
-   NSArray * dataArray = [plist objectForKey:[NSString stringWithFormat:@"Screen %d",playCount]];
-    for (int i = 0; i < [dataArray count]; i++) {
-        NSMutableDictionary * data = [dataArray objectAtIndex:i];
-        [imageArray addObject:[UIImage imageNamed:[data objectForKey:@"Image"]]];
-        [locationArray addObject:[data objectForKey:@"Postion"]];
-    }
-        
-    //Add images on game screen
-    for (int i = 0; i<[imageArray count]; i++)
-    {
-        UIImageView * hiddenImage = [[UIImageView alloc]init];
-        CGPoint position = CGPointFromString([locationArray objectAtIndex:i]);
-        [hiddenImage setFrame:CGRectMake(position.x, position.y, 50, 50)];
-        [hiddenImage setImage:[imageArray objectAtIndex:i]];
-        [hiddenImage setTag:i+100];
-        [hiddenImage setUserInteractionEnabled:YES];
-        [self.view addSubview:hiddenImage];
-        hiddenImage.contentMode = UIViewContentModeScaleAspectFit;
-        [hiddenImage release];
-    }
-    [locationArray release];
-    [self resetUI];
-}
-
-- (void)resetUI
-{
-    timer = nil;
-    for(UILabel *label in [namesBackGround subviews])
-    {
-     label.textColor = [UIColor blackColor];
-    }
-    time = DEFAULTTIME;
-    timeDisplayLabel.textColor = [UIColor whiteColor];
-    timeDisplayLabel.text = [NSString stringWithFormat:@"%@%d",KTIME,DEFAULTTIME];
-}
-- (void)removeAddedImages
-{
-    for(UIImageView *imageview in self.view.subviews)
-    {
-        if ([imageArray containsObject:imageview.image]) {
-            [imageview removeFromSuperview];
-        }
-    }
-}
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -226,6 +154,120 @@
 }
 
 #pragma mark -
+#pragma mark Display UI methods
+
+/**
+ * Display Images from plist 
+ */
+
+- (void)createUI
+{
+    [imageArray removeAllObjects];
+    
+    //Get data from plist
+    NSMutableDictionary *plist = [[NSMutableDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Images" ofType:@"plist"]];
+   NSMutableArray *locationArray = [[NSMutableArray alloc]init];
+   dataArray = [plist objectForKey:[NSString stringWithFormat:@"Screen %d",playCount]];
+    for (int i = 0; i < [dataArray count]; i++) {
+        NSMutableDictionary * data = [dataArray objectAtIndex:i];
+        [imageArray addObject:[UIImage imageNamed:[data objectForKey:@"Image"]]];
+        [locationArray addObject:[data objectForKey:@"Postion"]];
+    }
+    
+    //Add images on game screen
+    for (int i = 0; i<[imageArray count]; i++)
+    {
+        UIImageView * hiddenImage = [[UIImageView alloc]init];
+        CGPoint position = CGPointFromString([locationArray objectAtIndex:i]);
+        [hiddenImage setFrame:CGRectMake(position.x, position.y, 50, 50)];
+        [hiddenImage setImage:[imageArray objectAtIndex:i]];
+        [hiddenImage setTag:i+100];
+        [hiddenImage setUserInteractionEnabled:YES];
+        [self.view addSubview:hiddenImage];
+        hiddenImage.contentMode = UIViewContentModeScaleAspectFit;
+        [hiddenImage release];
+    }
+    [locationArray release];
+    [self createLabels];
+}
+
+/**
+ * Reset the Time 
+ */
+
+- (void)resetUI
+{
+    timer = nil;
+    time = DEFAULTTIME;
+    timeDisplayLabel.textColor = [UIColor whiteColor];
+    timeDisplayLabel.text = [NSString stringWithFormat:@"%@%d",KTIME,DEFAULTTIME];
+}
+
+/**
+ * Clear the Screen 
+ */
+
+- (void)removeAddedImages
+{
+    for(UIImageView *imageview in self.view.subviews)
+    {
+        if ([imageArray containsObject:imageview.image]) {
+            [imageview removeFromSuperview];
+        }
+    }
+}
+
+/**
+ * Display the Labels randomly 
+ */
+
+- (void)createLabels{
+    [labelNamesarray removeAllObjects];
+    for(UILabel *label in [namesBackGround subviews])
+    {
+        [label removeFromSuperview];
+    }
+    //Get 6 random numbers 
+    NSMutableArray *numbers = [NSMutableArray array];
+    for (int k = 0; k < [dataArray count]-1; k++) {
+        [numbers addObject:[NSString stringWithFormat:@"%d",k]];
+    }
+    NSMutableArray *result = [NSMutableArray array];
+    while ([result count] <6) {
+        int r = arc4random() % [numbers count];
+        [result addObject:[numbers objectAtIndex:r]];
+        [numbers removeObjectAtIndex:r];
+    }
+    for (int j = 0; j< [result count]; j++) {
+        NSMutableDictionary * data = [dataArray objectAtIndex:[[result objectAtIndex:j]intValue]];
+        [labelNamesarray addObject:[data objectForKey:@"Name"]];
+    }
+    int i=0,k=0;
+    while(i<[labelNamesarray count])
+    {
+        int y = k*32;
+        int j=0;
+        
+        //Display 6 labels
+        for(j=0; j<2;j++){
+            if (i>=[labelNamesarray count]) break;
+            UILabel *labelText = [[[UILabel alloc] init] autorelease];
+            labelText.text=[labelNamesarray objectAtIndex:i];
+            labelText.textColor = [UIColor blackColor];
+            labelText.font = [UIFont systemFontOfSize:14];
+            labelText.backgroundColor = [UIColor clearColor];
+            labelText.textAlignment = UITextAlignmentLeft;
+            labelText.tag = 500 + i;
+            [labelText setFrame:CGRectMake((45*(j+1)+80*j), y-10, 80, 50)];
+            [namesBackGround addSubview:labelText];
+            i++;
+        }
+        k = k+1;
+    }
+    [self resetUI];
+}
+
+#pragma mark -
 #pragma mark Gaming methods
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -237,8 +279,14 @@
             
             break;
         case 1:
+            playCount = playCount +1;
+            if (playCount>3) {
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            else{
             [overLayView removeFromSuperview];
             [self createUI];
+            }
             break;
         default:
             break;
@@ -303,7 +351,7 @@
             for(UILabel *label in [namesBackGround subviews])
             {
                 int tagvalue=[label tag];
-                if((tagvalue-100)==[[touch view]tag])
+                if((tagvalue-500)==[[touch view]tag])
                 {
                     label.textColor=[UIColor redColor];
                 }

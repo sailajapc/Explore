@@ -5,7 +5,7 @@
 	<key>Screen 1</key>
 	<array>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil.jpeg</string>
@@ -13,7 +13,7 @@
 			<string>{20,100}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Hat</string>
 			<key>Image</key>
 			<string>hat.jpeg</string>
@@ -21,7 +21,7 @@
 			<string>{120,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pad</string>
 			<key>Image</key>
 			<string>pad.jpeg</string>
@@ -29,7 +29,7 @@
 			<string>{20,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>News Paper</string>
 			<key>Image</key>
 			<string>newspaper.jpeg</string>
@@ -37,7 +37,7 @@
 			<string>{100,68}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Calender</string>
 			<key>Image</key>
 			<string>cal.jpeg</string>
@@ -45,7 +45,7 @@
 			<string>{60,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bag</string>
 			<key>Image</key>
 			<string>bag.jpeg</string>
@@ -53,7 +53,7 @@
 			<string>{100,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Mobile</string>
 			<key>Image</key>
 			<string>mobile.jpeg</string>
@@ -61,7 +61,7 @@
 			<string>{130,300}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bottle</string>
 			<key>Image</key>
 			<string>bottle.jpeg</string>
@@ -69,7 +69,7 @@
 			<string>{160,180}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Candle</string>
 			<key>Image</key>
 			<string>candle.jpeg</string>
@@ -77,7 +77,7 @@
 			<string>{6,120}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Ball</string>
 			<key>Image</key>
 			<string>ball.jpeg</string>
@@ -85,7 +85,7 @@
 			<string>{122,240}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Flower</string>
 			<key>Image</key>
 			<string>flower.jpeg</string>
@@ -93,7 +93,7 @@
 			<string>{210,270}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Rose</string>
 			<key>Image</key>
 			<string>rose.jpeg</string>
@@ -101,7 +101,7 @@
 			<string>{170,250}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pen</string>
 			<key>Image</key>
 			<string>pen.jpeg</string>
@@ -109,7 +109,7 @@
 			<string>{17,75}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>?</string>
 			<key>Image</key>
 			<string>qmark.jpeg</string>
@@ -120,7 +120,7 @@
 	<key>Screen 2</key>
 	<array>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil1.jpeg</string>
@@ -128,7 +128,7 @@
 			<string>{20,100}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Hat</string>
 			<key>Image</key>
 			<string>hat1.jpeg</string>
@@ -136,7 +136,7 @@
 			<string>{120,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pad</string>
 			<key>Image</key>
 			<string>pad1.jpeg</string>
@@ -144,7 +144,7 @@
 			<string>{20,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>News Paper</string>
 			<key>Image</key>
 			<string>newspaper1.jpeg</string>
@@ -152,7 +152,7 @@
 			<string>{100,68}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Calender</string>
 			<key>Image</key>
 			<string>cal1.jpeg</string>
@@ -160,7 +160,7 @@
 			<string>{60,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bag</string>
 			<key>Image</key>
 			<string>bag1.jpeg</string>
@@ -168,7 +168,7 @@
 			<string>{100,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Mobile</string>
 			<key>Image</key>
 			<string>mobile1.jpeg</string>
@@ -176,7 +176,7 @@
 			<string>{130,300}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bottle</string>
 			<key>Image</key>
 			<string>bottle1.jpeg</string>
@@ -184,7 +184,7 @@
 			<string>{160,180}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Candle</string>
 			<key>Image</key>
 			<string>candle1.jpeg</string>
@@ -192,7 +192,7 @@
 			<string>{6,120}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Ball</string>
 			<key>Image</key>
 			<string>ball1.jpeg</string>
@@ -200,7 +200,7 @@
 			<string>{122,240}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Flower</string>
 			<key>Image</key>
 			<string>flower1.jpeg</string>
@@ -208,7 +208,7 @@
 			<string>{210,270}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Rose</string>
 			<key>Image</key>
 			<string>rose1.jpeg</string>
@@ -216,7 +216,7 @@
 			<string>{170,250}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pen</string>
 			<key>Image</key>
 			<string>pen1.jpeg</string>
@@ -224,7 +224,7 @@
 			<string>{17,75}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>?</string>
 			<key>Image</key>
 			<string>qmark.jpeg</string>
@@ -235,7 +235,7 @@
 	<key>Screen 3</key>
 	<array>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil2.jpeg</string>
@@ -243,7 +243,7 @@
 			<string>{20,100}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Hat</string>
 			<key>Image</key>
 			<string>hat2.jpeg</string>
@@ -251,7 +251,7 @@
 			<string>{120,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pad</string>
 			<key>Image</key>
 			<string>pad2.jpeg</string>
@@ -259,7 +259,7 @@
 			<string>{20,50}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>News Paper</string>
 			<key>Image</key>
 			<string>newspaper2.jpeg</string>
@@ -267,7 +267,7 @@
 			<string>{100,68}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Calender</string>
 			<key>Image</key>
 			<string>cal2.jpeg</string>
@@ -275,7 +275,7 @@
 			<string>{60,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bag</string>
 			<key>Image</key>
 			<string>bag2.jpeg</string>
@@ -283,7 +283,7 @@
 			<string>{100,210}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Mobile</string>
 			<key>Image</key>
 			<string>mobile2.jpeg</string>
@@ -291,7 +291,7 @@
 			<string>{130,300}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Bottle</string>
 			<key>Image</key>
 			<string>bottle2.jpeg</string>
@@ -299,7 +299,7 @@
 			<string>{160,180}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Candle</string>
 			<key>Image</key>
 			<string>candle2.jpeg</string>
@@ -307,7 +307,7 @@
 			<string>{6,120}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Ball</string>
 			<key>Image</key>
 			<string>ball2.jpeg</string>
@@ -315,7 +315,7 @@
 			<string>{122,240}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Flower</string>
 			<key>Image</key>
 			<string>flower2.jpeg</string>
@@ -323,7 +323,7 @@
 			<string>{210,270}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Rose</string>
 			<key>Image</key>
 			<string>rose2.jpeg</string>
@@ -331,7 +331,7 @@
 			<string>{170,250}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>Pen</string>
 			<key>Image</key>
 			<string>pen2.jpeg</string>
@@ -339,7 +339,7 @@
 			<string>{17,75}</string>
 		</dict>
 		<dict>
-			<key>Name </key>
+			<key>Name</key>
 			<string>?</string>
 			<key>Image</key>
 			<string>qmark.jpeg</string>

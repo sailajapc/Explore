@@ -12,14 +12,14 @@
 {
     UIView *overLayView;
     NSMutableArray *imageArray;
-    NSArray *labelNamesarray;
+    NSMutableArray *labelNamesarray;
     UILabel *timeDisplayLabel;
     UILabel *scorelabel;
     UIImageView *namesBackGround;
+    NSArray * dataArray;
+    NSMutableArray *randomSelection;
     
-    UILabel *namesLabel;
-    UILabel *labelText;
-    
+    UILabel *namesLabel;    
     int time;
     int score;
     int playCount;
