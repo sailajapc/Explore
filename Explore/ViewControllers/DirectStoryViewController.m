@@ -19,6 +19,7 @@
 - (void)resetUI;
 - (void)removeAddedImages;
 - (void)createLabels;
+- (void)animationEffectMethod:(UIImageView *)image;
 
 @end
 
@@ -54,8 +55,6 @@
         [namesBackGround setUserInteractionEnabled:YES];
         [self.view addSubview:namesBackGround];
         [namesBackGround release];
-        
-        labelNamesarray = [[NSMutableArray alloc]init];
         
         UIButton *helpButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [helpButton setBackgroundImage:[UIImage imageNamed:@"help.jpeg"] forState:UIControlStateNormal];
@@ -106,9 +105,6 @@
         [rightItem release];
         [leftView release];
         [leftItem release];
-        
-        imageArray = [[NSMutableArray alloc]init];
-
     }
     return self;
 }
@@ -118,7 +114,6 @@
     [overLayView release];
     [scorelabel release];
     [timeDisplayLabel release];
-    [imageArray release];
     [timer release];
     timer = nil;
     [super dealloc]; 
@@ -162,7 +157,13 @@
 
 - (void)createUI
 {
-    [imageArray removeAllObjects];
+    playCount = playCount +1;
+    if (playCount>3) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    else
+    {
+    NSMutableArray *imageArray = [[NSMutableArray alloc]init];
     
     //Get data from plist
     NSMutableDictionary *plist = [[NSMutableDictionary alloc]initWithContentsOfFile:[[NSBundle mainBundle]pathForResource:@"Images" ofType:@"plist"]];
@@ -187,8 +188,10 @@
         hiddenImage.contentMode = UIViewContentModeScaleAspectFit;
         [hiddenImage release];
     }
+    [imageArray release];
     [locationArray release];
     [self createLabels];
+    }
 }
 
 /**
@@ -211,7 +214,7 @@
 {
     for(UIImageView *imageview in self.view.subviews)
     {
-        if ([imageArray containsObject:imageview.image]) {
+        if (imageview.tag >= 100 && imageview.tag <=113) {
             [imageview removeFromSuperview];
         }
     }
@@ -222,7 +225,7 @@
  */
 
 - (void)createLabels{
-    [labelNamesarray removeAllObjects];
+    NSMutableArray *labelNamesarray = [[NSMutableArray alloc]init];
     for(UILabel *label in [namesBackGround subviews])
     {
         [label removeFromSuperview];
@@ -232,7 +235,7 @@
     for (int k = 0; k < [dataArray count]-1; k++) {
         [numbers addObject:[NSString stringWithFormat:@"%d",k]];
     }
-    NSMutableArray *result = [NSMutableArray array];
+    result = [[NSMutableArray array]retain];
     while ([result count] <6) {
         int r = arc4random() % [numbers count];
         [result addObject:[numbers objectAtIndex:r]];
@@ -264,11 +267,12 @@
         }
         k = k+1;
     }
+    [labelNamesarray release];
     [self resetUI];
 }
 
 #pragma mark -
-#pragma mark Gaming methods
+#pragma mark Alert Delegate methods
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
@@ -279,20 +283,15 @@
             
             break;
         case 1:
-            playCount = playCount +1;
-            if (playCount>3) {
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            }
-            else{
             [overLayView removeFromSuperview];
             [self createUI];
-            }
-            break;
         default:
             break;
     }
 }
 
+#pragma mark -
+#pragma mark Gaming methods
 /**
  * Display the time 
  */
@@ -331,56 +330,67 @@
     }
 }
 
+- (void)animationEffectMethod:(UIImageView *)image
+{
+    CGPoint location = CGPointMake(image.frame.origin.x, image.frame.origin.y);
+    
+    //Animate the image when user taps the hidden image
+    [UIImageView beginAnimations:nil context:nil];
+    [UIImageView setAnimationDelegate:self];
+    [UIImageView setAnimationDuration:0.5f];
+    [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    
+    CGAffineTransform scaleTrans = CGAffineTransformMakeScale(30,30);
+    
+    image.transform = CGAffineTransformInvert(scaleTrans);
+    image.center = location;
+    [UIImageView commitAnimations];
+    
+}
+
+#pragma mark -
+#pragma mark Touch methods
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     UITouch *touch = [touches anyObject];
     UIImageView *selImage = (UIImageView *)[touch view];
-    NSLog(@"image %@",selImage);
-    if ([imageArray containsObject:selImage.image])
-    {
-        if (selImage.tag%100 == 13) {
-            helpCount = helpCount +1;
-            [helpBadge setHidden:NO];
-            [helpBadge autoBadgeSizeWithString:[NSString stringWithFormat:@"%d",helpCount]];
-        }
+    
+    if (selImage.tag%100 == 13) {
+        [self animationEffectMethod:selImage];
+        helpCount = helpCount +1;
+        [helpBadge setHidden:NO];
+        [helpBadge autoBadgeSizeWithString:[NSString stringWithFormat:@"%d",helpCount]];
+    }
+    
+    else{
         
-        else{
-        score = score + 10;
-        scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,score];
-            //Color changes when a image is selected.
-            for(UILabel *label in [namesBackGround subviews])
-            {
-                int tagvalue=[label tag];
-                if((tagvalue-500)==[[touch view]tag])
-                {
-                    label.textColor=[UIColor redColor];
-                }
-            }
-        }
-        CGPoint location = CGPointMake(selImage.frame.origin.x, selImage.frame.origin.y);
-        
-        //Animate the image when user taps the hidden image
-        [UIImageView beginAnimations:nil context:nil];
-        [UIImageView setAnimationDelegate:self];
-        [UIImageView setAnimationDuration:0.5f];
-        [UIImageView setAnimationCurve:UIViewAnimationCurveEaseInOut];
-        
-        CGAffineTransform scaleTrans = CGAffineTransformMakeScale(30,30);
-        
-        selImage.transform = CGAffineTransformInvert(scaleTrans);
-        selImage.center = location;
-        [UIImageView commitAnimations];
-                
-                //Display alert if user founds all hidden images
-        if (score == 60*playCount)
+        for (int s= 0; s < [result count]; s++) 
         {
-            [timer invalidate];
-            [self removeAddedImages];
-
-            UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Congratulations" message:[NSString stringWithFormat:@"You got %d points \n Do you want to play again",score] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Quit",@"Play", nil];
-            [alertview show];
-            [alertview release];
+            if (selImage.tag%100 == [[result objectAtIndex:s]intValue])
+            {
+                [self animationEffectMethod:selImage];
+                score = score + 10;
+                scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,score];
+                
+                //Color changes when a image is selected.
+                UILabel *label = (UILabel *)[[namesBackGround subviews]objectAtIndex:s];
+                label.textColor = [UIColor redColor];
+            }
+            
         }
+        
+    }
+    
+    //Display alert if user founds all hidden images
+    if (score == 60*playCount)
+    {
+        [timer invalidate];
+        [self removeAddedImages];
+        
+        UIAlertView *alertview = [[UIAlertView alloc]initWithTitle:@"Congratulations" message:[NSString stringWithFormat:@"You got %d points \n Do you want to play again",score] delegate:self cancelButtonTitle:nil otherButtonTitles:@"Quit",@"Play", nil];
+        [alertview show];
+        [alertview release];
     }
     //Create a timer
     if (!timer)

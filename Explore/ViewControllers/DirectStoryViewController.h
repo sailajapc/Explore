@@ -11,8 +11,6 @@
 @interface DirectStoryViewController : UIViewController<UIAlertViewDelegate>
 {
     UIView *overLayView;
-    NSMutableArray *imageArray;
-    NSMutableArray *labelNamesarray;
     UILabel *timeDisplayLabel;
     UILabel *scorelabel;
     UIImageView *namesBackGround;
@@ -26,6 +24,7 @@
     int helpCount;
     NSTimer *timer;
     CustomBadge *helpBadge;
+    NSMutableArray *result;
 }
 
 @end

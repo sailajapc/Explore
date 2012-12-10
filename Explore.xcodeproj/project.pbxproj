@@ -45,6 +45,7 @@
 		8A2441F31667682400A25B9F /* ball2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A2441F21667682400A25B9F /* ball2.jpeg */; };
 		8A2441F516676B1A00A25B9F /* qmark.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A2441F416676B1800A25B9F /* qmark.jpeg */; };
 		8A2E58B21650F1F80066BB75 /* namesLabel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8A2E58B11650F1F80066BB75 /* namesLabel.jpg */; };
+		8A380EAD167602FA00262EB0 /* HSSingletonClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 8A380EAC167602FA00262EB0 /* HSSingletonClass.m */; };
 		8A83371F164AA3D500824C40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A83371E164AA3D500824C40 /* UIKit.framework */; };
 		8A833721164AA3D500824C40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A833720164AA3D500824C40 /* Foundation.framework */; };
 		8A833723164AA3D500824C40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A833722164AA3D500824C40 /* CoreGraphics.framework */; };
@@ -107,6 +108,8 @@
 		8A2441F21667682400A25B9F /* ball2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ball2.jpeg; sourceTree = "<group>"; };
 		8A2441F416676B1800A25B9F /* qmark.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = qmark.jpeg; sourceTree = "<group>"; };
 		8A2E58B11650F1F80066BB75 /* namesLabel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = namesLabel.jpg; sourceTree = "<group>"; };
+		8A380EAB167602FA00262EB0 /* HSSingletonClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSingletonClass.h; sourceTree = "<group>"; };
+		8A380EAC167602FA00262EB0 /* HSSingletonClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSingletonClass.m; sourceTree = "<group>"; };
 		8A83371A164AA3D500824C40 /* Explore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Explore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A83371E164AA3D500824C40 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		8A833720164AA3D500824C40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -222,6 +225,8 @@
 		8A833724164AA3D500824C40 /* Explore */ = {
 			isa = PBXGroup;
 			children = (
+				8A380EAB167602FA00262EB0 /* HSSingletonClass.h */,
+				8A380EAC167602FA00262EB0 /* HSSingletonClass.m */,
 				8A83372D164AA3D500824C40 /* HSAppDelegate.h */,
 				8A83372E164AA3D500824C40 /* HSAppDelegate.m */,
 				9A3A51AE1656286200EDA600 /* ViewControllers */,
@@ -420,6 +425,7 @@
 				8A83372F164AA3D500824C40 /* HSAppDelegate.m in Sources */,
 				8A83373A164AA3F600824C40 /* HSViewController.m in Sources */,
 				8A83373C164AA3F600824C40 /* DirectStoryViewController.m in Sources */,
+				8A380EAD167602FA00262EB0 /* HSSingletonClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
