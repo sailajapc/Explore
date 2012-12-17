@@ -326,9 +326,18 @@
         
         UIImageView *imageView = (UIImageView *)[self.view viewWithTag:[[result objectAtIndex:0]intValue]+ 100];
         imageView.layer.borderColor = [[UIColor greenColor]CGColor];
+        
+        CATransition *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:2.0f];
+        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+        [animation setType:@"rippleEffect" ];
+        [animation setRepeatCount:2];
+        [imageView.layer addAnimation:animation forKey:NULL];
         imageView.layer.borderWidth = 5.0;
         
-        if (helpCount == 0) {
+        if (helpCount == 0) 
+        {
             [helpBadge setHidden:YES];
         }
     [helpBadge autoBadgeSizeWithString:[NSString stringWithFormat:@"%d",helpCount]];
@@ -383,9 +392,7 @@
                 label.textColor = [UIColor cyanColor];
                 [result removeObjectAtIndex:s];
             }
-            
         }
-        
     }
     
     //Display alert if user founds all hidden images

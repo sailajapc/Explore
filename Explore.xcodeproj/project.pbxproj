@@ -63,6 +63,7 @@
 		8A83374E164AA40700824C40 /* ball.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A833744164AA40700824C40 /* ball.jpeg */; };
 		8A83374F164AA40700824C40 /* flower.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A833745164AA40700824C40 /* flower.jpeg */; };
 		8A833750164AA40700824C40 /* rose.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A833746164AA40700824C40 /* rose.jpeg */; };
+		8AB07B4B167F21C600095A21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB07B48167F21BD00095A21 /* QuartzCore.framework */; };
 		8AFD708E16673F7E0061EC20 /* Images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AFD708D16673F7E0061EC20 /* Images.plist */; };
 		9A3A51A516561A1000EDA600 /* help.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A51A416561A1000EDA600 /* help.jpeg */; };
 		9A3A51AC1656253600EDA600 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A51AB1656229100EDA600 /* CustomBadge.m */; };
@@ -133,6 +134,7 @@
 		8A833744164AA40700824C40 /* ball.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ball.jpeg; sourceTree = "<group>"; };
 		8A833745164AA40700824C40 /* flower.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpeg; sourceTree = "<group>"; };
 		8A833746164AA40700824C40 /* rose.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rose.jpeg; sourceTree = "<group>"; };
+		8AB07B48167F21BD00095A21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8AFD708D16673F7E0061EC20 /* Images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Images.plist; sourceTree = "<group>"; };
 		9A3A51A416561A1000EDA600 /* help.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = help.jpeg; sourceTree = "<group>"; };
 		9A3A51AA1656229100EDA600 /* CustomBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			files = (
 				8A83371F164AA3D500824C40 /* UIKit.framework in Frameworks */,
 				8A833721164AA3D500824C40 /* Foundation.framework in Frameworks */,
+				8AB07B4B167F21C600095A21 /* QuartzCore.framework in Frameworks */,
 				8A833723164AA3D500824C40 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -215,6 +218,7 @@
 		8A83371D164AA3D500824C40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8AB07B48167F21BD00095A21 /* QuartzCore.framework */,
 				8A83371E164AA3D500824C40 /* UIKit.framework */,
 				8A833720164AA3D500824C40 /* Foundation.framework */,
 				8A833722164AA3D500824C40 /* CoreGraphics.framework */,
