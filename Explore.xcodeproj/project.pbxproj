@@ -64,6 +64,7 @@
 		8A83374F164AA40700824C40 /* flower.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A833745164AA40700824C40 /* flower.jpeg */; };
 		8A833750164AA40700824C40 /* rose.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8A833746164AA40700824C40 /* rose.jpeg */; };
 		8AB07B4B167F21C600095A21 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AB07B48167F21BD00095A21 /* QuartzCore.framework */; };
+		8AB07B51167F463200095A21 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8AB07B50167F463200095A21 /* icon.png */; };
 		8AFD708E16673F7E0061EC20 /* Images.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8AFD708D16673F7E0061EC20 /* Images.plist */; };
 		9A3A51A516561A1000EDA600 /* help.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9A3A51A416561A1000EDA600 /* help.jpeg */; };
 		9A3A51AC1656253600EDA600 /* CustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A3A51AB1656229100EDA600 /* CustomBadge.m */; };
@@ -135,6 +136,7 @@
 		8A833745164AA40700824C40 /* flower.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flower.jpeg; sourceTree = "<group>"; };
 		8A833746164AA40700824C40 /* rose.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rose.jpeg; sourceTree = "<group>"; };
 		8AB07B48167F21BD00095A21 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8AB07B50167F463200095A21 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		8AFD708D16673F7E0061EC20 /* Images.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Images.plist; sourceTree = "<group>"; };
 		9A3A51A416561A1000EDA600 /* help.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = help.jpeg; sourceTree = "<group>"; };
 		9A3A51AA1656229100EDA600 /* CustomBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomBadge.h; sourceTree = "<group>"; };
@@ -308,6 +310,7 @@
 				8A833740164AA40700824C40 /* amma.jpg */,
 				8A833741164AA40700824C40 /* large-frame.png */,
 				8A833743164AA40700824C40 /* Sairam.jpg */,
+				8AB07B50167F463200095A21 /* icon.png */,
 			);
 			name = "Resources ";
 			path = Resources;
@@ -414,6 +417,7 @@
 				8A2441F11667681C00A25B9F /* bottle2.jpeg in Resources */,
 				8A2441F31667682400A25B9F /* ball2.jpeg in Resources */,
 				8A2441F516676B1A00A25B9F /* qmark.jpeg in Resources */,
+				8AB07B51167F463200095A21 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +456,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Prakash Dantuluri (ZAH86A92JL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prakash Dantuluri (ZAH86A92JL)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -467,6 +472,8 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "5A5F4097-09DE-4493-AE89-841F83E70742";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5A5F4097-09DE-4493-AE89-841F83E70742";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -476,7 +483,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Prakash Dantuluri (ZAH86A92JL)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prakash Dantuluri (ZAH86A92JL)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -485,6 +493,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "5A5F4097-09DE-4493-AE89-841F83E70742";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5A5F4097-09DE-4493-AE89-841F83E70742";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
