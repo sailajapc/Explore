@@ -260,7 +260,7 @@
             labelText.font = [UIFont systemFontOfSize:14];
             labelText.backgroundColor = [UIColor clearColor];
             labelText.textAlignment = UITextAlignmentLeft;
-            labelText.tag = 500 + i;
+            labelText.tag = 500 + [[result objectAtIndex:i]intValue];
             [labelText setFrame:CGRectMake((45*(j+1)+80*j), y-10, 80, 50)];
             [namesBackGround addSubview:labelText];
             i++;
@@ -321,8 +321,13 @@
 
 - (void)helpButtonPressed
 {
-    if (helpCount >0) {
+    if (helpCount >0 && [result count] > 0) {
         helpCount = helpCount -1;
+        
+        UIImageView *imageView = (UIImageView *)[self.view viewWithTag:[[result objectAtIndex:0]intValue]+ 100];
+        imageView.layer.borderColor = [[UIColor greenColor]CGColor];
+        imageView.layer.borderWidth = 5.0;
+        
         if (helpCount == 0) {
             [helpBadge setHidden:YES];
         }
@@ -374,8 +379,9 @@
                 scorelabel.text = [NSString stringWithFormat:@"%@%d",KSCORE,score];
                 
                 //Color changes when a image is selected.
-                UILabel *label = (UILabel *)[[namesBackGround subviews]objectAtIndex:s];
-                label.textColor = [UIColor redColor];
+                UILabel *label = (UILabel *)[namesBackGround viewWithTag:[[result objectAtIndex:s]intValue]+500];
+                label.textColor = [UIColor cyanColor];
+                [result removeObjectAtIndex:s];
             }
             
         }
