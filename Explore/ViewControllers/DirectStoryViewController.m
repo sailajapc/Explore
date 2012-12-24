@@ -53,6 +53,7 @@
         namesBackGround = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"namesLabel.jpg"]];
         [namesBackGround setFrame:CGRectMake(0,362,self.view.frame.size.width - 60,100)];
         [namesBackGround setUserInteractionEnabled:YES];
+        namesBackGround.tag = 1234;
         [self.view addSubview:namesBackGround];
         [namesBackGround release];
         
@@ -114,7 +115,7 @@
     [overLayView release];
     [scorelabel release];
     [timeDisplayLabel release];
-    [timer release];
+    //[timer release];
     timer = nil;
     [super dealloc]; 
 }
@@ -370,7 +371,7 @@
     UITouch *touch = [touches anyObject];
     UIImageView *selImage = (UIImageView *)[touch view];
     
-    if (selImage.tag%100 == 13) {
+    if (selImage.tag%100 == 13 && selImage.tag != 1234) {
         [self animationEffectMethod:selImage];
         helpCount = helpCount +1;
         [helpBadge setHidden:NO];
@@ -381,7 +382,7 @@
         
         for (int s= 0; s < [result count]; s++) 
         {
-            if (selImage.tag%100 == [[result objectAtIndex:s]intValue])
+            if (selImage.tag%100 == [[result objectAtIndex:s]intValue] && selImage.tag != 1234)
             {
                 [self animationEffectMethod:selImage];
                 score = score + 10;
