@@ -164,7 +164,12 @@
     playCount = playCount +1;
     if (playCount>3) {
         [[HSSingletonClass sharedSingleton]incrementStoryLevel];
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:1];
+        [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromLeft forView:self.navigationController.view cache:YES];
         [self.navigationController popToRootViewControllerAnimated:YES];
+        [UIView commitAnimations];
+
     }
     else
     {

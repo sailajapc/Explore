@@ -170,7 +170,11 @@
 - (void)skipButtonClicked
 {
     DirectStoryViewController *directViewObject = [[DirectStoryViewController alloc]init];
-    [self.navigationController pushViewController:directViewObject animated:NO];
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:1];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight forView:self.navigationController.view cache:YES];
+   [self.navigationController pushViewController:directViewObject animated:NO];
+     [UIView commitAnimations];
     [directViewObject release];
 }
 
