@@ -6,11 +6,19 @@
 	<array>
 		<dict>
 			<key>Name</key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{250,300}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil.jpeg</string>
 			<key>Postion</key>
-			<string>{20,100}</string>
+			<string>{20,200}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -18,7 +26,15 @@
 			<key>Image</key>
 			<string>hat.jpeg</string>
 			<key>Postion</key>
-			<string>{120,50}</string>
+			<string>{145,50}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Key</string>
+			<key>Image</key>
+			<string>key.jpeg</string>
+			<key>Postion</key>
+			<string>{226,186}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -30,6 +46,14 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Banana</string>
+			<key>Image</key>
+			<string>banana.jpeg</string>
+			<key>Postion</key>
+			<string>{91,120}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>News Paper</string>
 			<key>Image</key>
 			<string>newspaper.jpeg</string>
@@ -38,11 +62,11 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>Calender</string>
+			<string>Calculator </string>
 			<key>Image</key>
 			<string>cal.jpeg</string>
 			<key>Postion</key>
-			<string>{60,210}</string>
+			<string>{55,210}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -50,7 +74,23 @@
 			<key>Image</key>
 			<string>bag.jpeg</string>
 			<key>Postion</key>
-			<string>{100,210}</string>
+			<string>{100,197}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Lamp</string>
+			<key>Image</key>
+			<string>bulb.jpeg</string>
+			<key>Postion</key>
+			<string>{124,120}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple</string>
+			<key>Image</key>
+			<string>apple.jpeg</string>
+			<key>Postion</key>
+			<string>{30,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -62,6 +102,14 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Cat</string>
+			<key>Image</key>
+			<string>cat.jpeg</string>
+			<key>Postion</key>
+			<string>{266,130}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Bottle</string>
 			<key>Image</key>
 			<string>bottle.jpeg</string>
@@ -70,11 +118,19 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Eye</string>
+			<key>Image</key>
+			<string>eye.jpeg</string>
+			<key>Postion</key>
+			<string>{266,79}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Candle</string>
 			<key>Image</key>
 			<string>candle.jpeg</string>
 			<key>Postion</key>
-			<string>{6,120}</string>
+			<string>{6,135}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -82,7 +138,7 @@
 			<key>Image</key>
 			<string>ball.jpeg</string>
 			<key>Postion</key>
-			<string>{122,240}</string>
+			<string>{102,255}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -94,11 +150,27 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Shoe</string>
+			<key>Image</key>
+			<string>shoe.jpeg</string>
+			<key>Postion</key>
+			<string>{200,79}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Rat</string>
+			<key>Image</key>
+			<string>rat.jpeg</string>
+			<key>Postion</key>
+			<string>{206,306}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Rose</string>
 			<key>Image</key>
 			<string>rose.jpeg</string>
 			<key>Postion</key>
-			<string>{170,250}</string>
+			<string>{180,230}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -106,26 +178,26 @@
 			<key>Image</key>
 			<string>pen.jpeg</string>
 			<key>Postion</key>
-			<string>{17,75}</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>?</string>
-			<key>Image</key>
-			<string>qmark.jpeg</string>
-			<key>Postion</key>
-			<string>{250,300}</string>
+			<string>{12,275}</string>
 		</dict>
 	</array>
 	<key>Screen 2</key>
 	<array>
 		<dict>
 			<key>Name</key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{160,190}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil1.jpeg</string>
 			<key>Postion</key>
-			<string>{20,100}</string>
+			<string>{250,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -133,7 +205,7 @@
 			<key>Image</key>
 			<string>hat1.jpeg</string>
 			<key>Postion</key>
-			<string>{120,50}</string>
+			<string>{20,200}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -145,19 +217,43 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Lamp</string>
+			<key>Image</key>
+			<string>bulb1.jpeg</string>
+			<key>Postion</key>
+			<string>{145,50}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Cat</string>
+			<key>Image</key>
+			<string>cat1.jpeg</string>
+			<key>Postion</key>
+			<string>{12,275}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>News Paper</string>
 			<key>Image</key>
 			<string>newspaper1.jpeg</string>
 			<key>Postion</key>
-			<string>{100,68}</string>
+			<string>{180,230}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>Calender</string>
+			<string>Rat</string>
+			<key>Image</key>
+			<string>rat1.jpeg</string>
+			<key>Postion</key>
+			<string>{226,186}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Calculator</string>
 			<key>Image</key>
 			<string>cal1.jpeg</string>
 			<key>Postion</key>
-			<string>{60,210}</string>
+			<string>{20,50}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -165,7 +261,23 @@
 			<key>Image</key>
 			<string>bag1.jpeg</string>
 			<key>Postion</key>
-			<string>{100,210}</string>
+			<string>{91,120}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Eye</string>
+			<key>Image</key>
+			<string>eye1.jpeg</string>
+			<key>Postion</key>
+			<string>{100,60}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Shoe</string>
+			<key>Image</key>
+			<string>shoe1.jpeg</string>
+			<key>Postion</key>
+			<string>{55,124}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -173,7 +285,7 @@
 			<key>Image</key>
 			<string>mobile1.jpeg</string>
 			<key>Postion</key>
-			<string>{130,300}</string>
+			<string>{100,197}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -181,7 +293,7 @@
 			<key>Image</key>
 			<string>bottle1.jpeg</string>
 			<key>Postion</key>
-			<string>{160,180}</string>
+			<string>{124,120}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -189,7 +301,7 @@
 			<key>Image</key>
 			<string>candle1.jpeg</string>
 			<key>Postion</key>
-			<string>{6,120}</string>
+			<string>{30,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -197,7 +309,7 @@
 			<key>Image</key>
 			<string>ball1.jpeg</string>
 			<key>Postion</key>
-			<string>{122,240}</string>
+			<string>{122,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -205,7 +317,15 @@
 			<key>Image</key>
 			<string>flower1.jpeg</string>
 			<key>Postion</key>
-			<string>{210,270}</string>
+			<string>{266,130}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Key</string>
+			<key>Image</key>
+			<string>key1.jpeg</string>
+			<key>Postion</key>
+			<string>{226,186}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -217,30 +337,46 @@
 		</dict>
 		<dict>
 			<key>Name</key>
+			<string>Banana</string>
+			<key>Image</key>
+			<string>banana1.jpeg</string>
+			<key>Postion</key>
+			<string>{266,79}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple</string>
+			<key>Image</key>
+			<string>apple1.jpeg</string>
+			<key>Postion</key>
+			<string>{6,135}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Pen</string>
 			<key>Image</key>
 			<string>pen1.jpeg</string>
 			<key>Postion</key>
-			<string>{17,75}</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>?</string>
-			<key>Image</key>
-			<string>qmark.jpeg</string>
-			<key>Postion</key>
-			<string>{3,89}</string>
+			<string>{102,255}</string>
 		</dict>
 	</array>
 	<key>Screen 3</key>
 	<array>
 		<dict>
 			<key>Name</key>
+			<string>?</string>
+			<key>Image</key>
+			<string>qmark.jpeg</string>
+			<key>Postion</key>
+			<string>{91,120}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
 			<string>Pencil</string>
 			<key>Image</key>
 			<string>pencil2.jpeg</string>
 			<key>Postion</key>
-			<string>{20,100}</string>
+			<string>{12,275}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -248,7 +384,31 @@
 			<key>Image</key>
 			<string>hat2.jpeg</string>
 			<key>Postion</key>
-			<string>{120,50}</string>
+			<string>{180,230}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple</string>
+			<key>Image</key>
+			<string>apple2.jpeg</string>
+			<key>Postion</key>
+			<string>{266,79}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Cat</string>
+			<key>Image</key>
+			<string>cat2.jpeg</string>
+			<key>Postion</key>
+			<string>{6,135}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Eye</string>
+			<key>Image</key>
+			<string>eye2.jpeg</string>
+			<key>Postion</key>
+			<string>{250,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -256,7 +416,15 @@
 			<key>Image</key>
 			<string>pad2.jpeg</string>
 			<key>Postion</key>
-			<string>{20,50}</string>
+			<string>{20,200}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Shoe</string>
+			<key>Image</key>
+			<string>shoe2.jpeg</string>
+			<key>Postion</key>
+			<string>{155,50}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -264,15 +432,15 @@
 			<key>Image</key>
 			<string>newspaper2.jpeg</string>
 			<key>Postion</key>
-			<string>{100,68}</string>
+			<string>{226,186}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>Calender</string>
+			<string>Calculator</string>
 			<key>Image</key>
 			<string>cal2.jpeg</string>
 			<key>Postion</key>
-			<string>{60,210}</string>
+			<string>{20,50}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -280,7 +448,7 @@
 			<key>Image</key>
 			<string>bag2.jpeg</string>
 			<key>Postion</key>
-			<string>{100,210}</string>
+			<string>{100,68}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -288,13 +456,29 @@
 			<key>Image</key>
 			<string>mobile2.jpeg</string>
 			<key>Postion</key>
-			<string>{130,300}</string>
+			<string>{52,120}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
 			<string>Bottle</string>
 			<key>Image</key>
 			<string>bottle2.jpeg</string>
+			<key>Postion</key>
+			<string>{100,197}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Banana</string>
+			<key>Image</key>
+			<string>banana2.jpeg</string>
+			<key>Postion</key>
+			<string>{130,300}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Rat</string>
+			<key>Image</key>
+			<string>rat2.jpeg</string>
 			<key>Postion</key>
 			<string>{160,180}</string>
 		</dict>
@@ -304,7 +488,7 @@
 			<key>Image</key>
 			<string>candle2.jpeg</string>
 			<key>Postion</key>
-			<string>{6,120}</string>
+			<string>{210,279}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -312,7 +496,7 @@
 			<key>Image</key>
 			<string>ball2.jpeg</string>
 			<key>Postion</key>
-			<string>{122,240}</string>
+			<string>{200,79}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -320,7 +504,7 @@
 			<key>Image</key>
 			<string>flower2.jpeg</string>
 			<key>Postion</key>
-			<string>{210,270}</string>
+			<string>{210,306}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -328,7 +512,23 @@
 			<key>Image</key>
 			<string>rose2.jpeg</string>
 			<key>Postion</key>
-			<string>{170,250}</string>
+			<string>{102,250}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Lamp</string>
+			<key>Image</key>
+			<string>bulb2.jpeg</string>
+			<key>Postion</key>
+			<string>{120,120}</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Key</string>
+			<key>Image</key>
+			<string>key2.jpeg</string>
+			<key>Postion</key>
+			<string>{30,300}</string>
 		</dict>
 		<dict>
 			<key>Name</key>
@@ -336,15 +536,7 @@
 			<key>Image</key>
 			<string>pen2.jpeg</string>
 			<key>Postion</key>
-			<string>{17,75}</string>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>?</string>
-			<key>Image</key>
-			<string>qmark.jpeg</string>
-			<key>Postion</key>
-			<string>{130,66}</string>
+			<string>{44,75}</string>
 		</dict>
 	</array>
 </dict>

@@ -96,6 +96,17 @@
     [self.storyImage setFrame:CGRectMake( 0.0f, 44.0f, 320.0f, 200.0f)]; //notice this is ON screen!
     [UIView commitAnimations];
     }
+    else{
+        //Presenting a cube animation to story image
+        CATransition *animation = [CATransition animation];
+        [animation setDelegate:self];
+        [animation setDuration:2.0f];
+        [animation setTimingFunction:UIViewAnimationCurveEaseInOut];
+        [animation setType:@"cube" ];
+        [animation setSubtype:kCATransitionFromLeft];
+        [animation setRepeatCount:1];
+        [self.storyImage.layer addAnimation:animation forKey:NULL];
+    }
     
     [self.storyLabelIn setFrame:CGRectMake( -130.0f, 272.0f, 268.0f,110.0f)]; //notice this is OFF screen!
     [UIView beginAnimations:@"animateStoryLabelIn" context:nil];

@@ -14,9 +14,8 @@
     UILabel *timeDisplayLabel;
     UILabel *scorelabel;
     UIImageView *namesBackGround;
-    NSArray * dataArray;
-    NSMutableArray *randomSelection;
-    
+    NSMutableArray * dataArray;
+     NSMutableArray *labelNames;
     UILabel *namesLabel;    
     int time;
     int score;

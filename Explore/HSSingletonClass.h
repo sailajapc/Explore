@@ -9,5 +9,15 @@
 #import <Foundation/Foundation.h>
 
 @interface HSSingletonClass : NSObject
+{
+    int storyLevel;
+    int score;
+}
 
++ (HSSingletonClass *)sharedSingleton;
+- (NSMutableDictionary *)loadPlistData;
+- (void)incrementStoryLevel;
+- (int)getStoryLevel;
+- (void)updateScore:(int)value;
+- (int)getScore;
 @end
